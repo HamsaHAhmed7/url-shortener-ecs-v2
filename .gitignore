@@ -1,9 +1,101 @@
-.env
+# =====================
+# Python
+# =====================
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.hypothesis/
+.pytest_cache/
+junit.xml
+
+# IPython/Jupyter
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# =====================
+# Docker
+# =====================
+*.log
+docker-compose.override.yml
+.docker/
+
+# =====================
+# Kubernetes / Helm
+# =====================
+*.yaml~        # temp files
+.kube/
+helmfile.d/
+chart.lock
+
+# =====================
+# Terraform
+# =====================
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+.terraform.lock.hcl
+terraform.tfvars
+terraform.tfvars.json
+
+# =====================
+# AWS / Cloud creds
+# =====================
+.aws/
+*.pem
+*.key
+*.crt
+
+# =====================
+# VSCode / Editors
+# =====================
+.vscode/
+.idea/
+*.swp
+*~
 .DS_Store
 
-__pycache__/
-.venv/
-*.pyc
-*.out
-.plan
-terraform.tfstate*
+# =====================
+# Node / Frontend (if added later)
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# =====================
+# Misc
+# =====================
+*.bak
+*.tmp
+*.orig
