@@ -1,11 +1,32 @@
-import os, boto3
+# src/ddb.py
+import boto3
+import os
 
-# TABLE_NAME must be provided via ECS task environment
-_table = boto3.resource("dynamodb").Table(os.environ["TABLE_NAME"])
+TABLE_NAME = os.getenv("TABLE_NAME", "urlshortener")
+ENDPOINT_URL = os.getenv("AWS_ENDPOINT_URL")  # LocalStack or AWS
+REGION = os.getenv("AWS_REGION", "us-east-1")
+
+# DynamoDB client
+dynamodb = boto3.client(
+    "dynamodb",
+    endpoint_url=ENDPOINT_URL,
+    region_name=REGION
+)
 
 def put_mapping(short_id: str, url: str):
-    _table.put_item(Item={"id": short_id, "url": url})
+    dynamodb.put_item(
+        TableName=TABLE_NAME,
+        Item={
+            "id": {"S": short_id},
+            "url": {"S": url}
+        }
+    )
 
 def get_mapping(short_id: str):
-    resp = _table.get_item(Key={"id": short_id})
-    return resp.get("Item")
+    resp = dynamodb.get_item(
+        TableName=TABLE_NAME,
+        Key={"id": {"S": short_id}}
+    )
+    if "Item" in resp:
+        return {"id": short_id, "url": resp["Item"]["url"]["S"]}
+    return None
