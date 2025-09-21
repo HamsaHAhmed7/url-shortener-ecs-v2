@@ -1,103 +1,90 @@
-# =====================
-# Python
-# =====================
+# ---- Terraform ----
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraform/
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+terraform.tfvars
+terraform.tfvars.json
+
+# Local backend state
+*.tfstate.backup
+
+# Plan files
+*.plan
+
+# ---- Python ----
 __pycache__/
 *.py[cod]
-*.so
+*.pyo
+*.pyd
+*.pdb
 *.egg
 *.egg-info/
-dist/
-build/
 .eggs/
 *.manifest
 *.spec
+dist/
+build/
+pip-wheel-metadata/
+*.log
 
 # Virtual environments
-.venv/
+.env
+.venv
 env/
 venv/
 ENV/
 env.bak/
+venv.bak/
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-*.hypothesis/
-.pytest_cache/
-junit.xml
-
-# IPython/Jupyter
+# Jupyter
 .ipynb_checkpoints
-profile_default/
-ipython_config.py
+*.ipynb
 
-# =====================
-# Docker
-# =====================
-*.log
+# ---- Docker ----
+*.pid
+*.seed
+*.pid.lock
 docker-compose.override.yml
 .docker/
 
-# =====================
-# Kubernetes / Helm
-# =====================
-*.yaml~        # temp files
-.kube/
-helmfile.d/
-chart.lock
+# ---- OS / IDE ----
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# =====================
-# Terraform
-# =====================
-**/.terraform/*
-*.tfstate
-*.tfstate.*
-crash.log
-override.tf
-override.tf.json
-.terraform.lock.hcl
-terraform.tfvars
-terraform.tfvars.json
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# =====================
-# AWS / Cloud creds
-# =====================
-.aws/
-*.pem
-*.key
-*.crt
-
-# =====================
-# VSCode / Editors
-# =====================
+# VSCode
 .vscode/
+.history/
 .idea/
+
+# JetBrains
+*.iml
+.idea/
+out/
+
+# ---- Local Dev ----
+*.local
+*.bak
 *.swp
 *~
-.DS_Store
 
-# =====================
-# Node / Frontend (if added later)
-# =====================
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# =====================
-# Misc
-# =====================
-*.bak
-*.tmp
-*.orig
-
-.terraform.lock.hcl
+# ---- Logs / Debug ----
+*.log
+logs/
+debug/
+tmp/
