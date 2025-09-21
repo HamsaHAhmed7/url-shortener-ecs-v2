@@ -99,3 +99,5 @@ yarn-error.log*
 *.bak
 *.tmp
 *.orig
+
+.terraform.lock.hcl`    `   `   `   `   `   `   `   `   `   `   `   `
