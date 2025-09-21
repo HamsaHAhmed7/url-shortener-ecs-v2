@@ -100,4 +100,4 @@ yarn-error.log*
 *.tmp
 *.orig
 
-.terraform.lock.hcl`    `   `   `   `   `   `   `   `   `   `   `   `
+.terraform.lock.hcl
