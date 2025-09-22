@@ -14,3 +14,13 @@ variable "cidr_block" {
   type    = string
   default = "10.0.0.0/16"
 }
+
+variable "alb_sg_name" {
+  type    = string
+  default = "alb-sg-url-shortener"
+}
+
+variable "ecs_sg_name" {
+  type    = string
+  default = "ecs-sg-url-shortener"
+}
